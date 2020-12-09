@@ -1,0 +1,38 @@
+{
+  "version": "0.0.1",
+  "name": "it-helpers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/augm-dev/it-helpers.git"
+  },
+  "description": "Helpers for augm-it",
+  "unpkg": "dist/index.min.js",
+  "umd:name": "augmitHelpers",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Marshall Brandt",
+    "email": "hey@m4r.sh",
+    "url": "https://m4r.sh"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "8.1.0",
+    "esm": "^3.2.25",
+    "rollup": "2.21.0",
+    "rollup-plugin-terser": "6.1.0"
+  },
+  "dependencies": {
+    "uid": "^2.0.0"
+  }
+}
