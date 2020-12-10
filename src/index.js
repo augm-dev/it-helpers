@@ -1,5 +1,4 @@
 import { uid } from 'uid'
-// from https://github.com/WebReflection/plain-tag/blob/master/esm/index.js
 function plain(t) {
   if(typeof t === 'string'){
     return t;
@@ -13,7 +12,7 @@ const raw=plain.bind(null);
 const it_prox = (name) => new Proxy({}, {
   get(_,prop){
     if(prop===Symbol.toPrimitive || prop === 'toString'){ return ()=>name }
-    return name+'_'+prop
+    return name+'__'+prop
   }
 });
 const register=(n)=>it_prox(n)
