@@ -4,12 +4,14 @@
   <img src="https://badgen.now.sh/npm/v/it-helpers" alt="version" />
 </a>
 <a href="https://bundlephobia.com/result?p=it-helpers">
-  <img src="https://img.badgesize.io/MarshallCB/it-helpers/main/es.js?compression=brotli" alt="install size" />
+  <img src="https://img.badgesize.io/augm-dev/it-helpers/main/es.js?compression=brotli" alt="install size" />
 </a>
 
 ### Helpers for [`augm-it`](https://github.com/augm-dev/augm-it)
 
 These helper functions, along with [`uhtml`](https://github.com/WebReflection/uhtml) are included the browser runtime for [`augm-it`](https://github.com/augm-dev/augm-it)
+
+[Codepen](https://codepen.io/marshallcb/pen/VwKKqYP?editors=0011)
 
 ---
 
