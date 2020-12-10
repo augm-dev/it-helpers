@@ -70,18 +70,18 @@ import { css, register } from 'it-helpers'
 let it = register('Header')
 
 let style = css`
-  // .Header{ ... }
+  /* .Header{ ... } */
   .${it}{ 
     width: 100%;
     padding: 4rem 0;
   }
-   // .Header__container{ ... }
+   /* .Header__container{ ... } */
   .${it.container}{
     width: 80%;
     display: block;
     margin: auto;
   }
-  // .Header__title{ ... }
+  /* .Header__title{ ... } */
   .${it.title}{
     font-size: 2rem;
     text-align: center;
