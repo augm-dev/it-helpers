@@ -28,7 +28,7 @@ const liveCSS = function(){
     const styleTag = document.createElement('style');
     styleTag.type = 'text/css';
     styleTag.appendChild(document.createTextNode(styles));
-    document.head.appendChild(styleTag);
+    return document.head.appendChild(styleTag)
   }
 };
 const classify = (n) => new Proxy({}, {
@@ -37,6 +37,6 @@ const classify = (n) => new Proxy({}, {
     return n+'__'+prop
   }
 });
-const mangle=(n)=>classify(n+'-'+uid$1(7));
+const mangle=(n)=>classify(n+'-'+uid(7));
 
 export { classify, css, liveCSS, mangle, raw, uid$1 as uid };
