@@ -35,14 +35,14 @@ style = css(".test{color:"+x+"}")
 
 ---
 
-### `register, mangled`
+### `classify, mangle`
 These return proxies to generate CSS class names. The proxy resolves to a string within template literals (when cast to a primitive using `Symbol.toPrimitive`) or when `.toString()` is called. When a property is accessed from the proxy, it returns the "base" string plus the property name. `"[base]__[property]"`
-- `register` is meant for on-site components when name-clashing can be easily prevented
-- `mangled` is meant for external imports of components when name-clashing is a concern
+- `classify` is meant for on-site components when name-clashing can be manually prevented
+- `mangle` is meant for external imports of components when name-clashing is a concern
 
 **Example**
 ```js
-let it = register('MyButton')
+let it = classify('MyButton')
 
 console.log(`${it}`) // MyButton
 console.log(it.toString()) // MyButton
@@ -52,7 +52,7 @@ console.log(it.overlay) // MyButton__overlay
 console.log(it) // Proxy({})
 console.log('.'+it) // .MyButton
 
-it = mangled('Btn2') // random ID generated when mangled is called
+it = mangle('Btn2') // random ID generated when mangle is called
 
 console.log(`${it}`) //Btn2-fa31b46
 console.log(it.container) // Btn2-fa31b46__container
@@ -61,28 +61,38 @@ console.log(it.overlay) // Btn2-fa31b46__overlay
 
 ---
 
+### `uid`
+Exports a version of `@lukeed/uid` that guarantees that the first character is a `_` so that they will be valid CSS selectors.
+
+---
+
+### `liveCSS`
+`liveCSS` behaves just like `css` and `raw`, but automatically injects a style tag into <head> with the contents. Returns the style node.
+
+---
+
 # Putting it together
 
 ```js
 import { html } from 'uhtml'
-import { css, register } from 'it-helpers'
+import { css, classify } from 'it-helpers'
 
-let it = register('Header')
+let Header = classify('Header')
 
 let style = css`
   /* .Header{ ... } */
-  .${it}{ 
+  .${Header}{ 
     width: 100%;
     padding: 4rem 0;
   }
    /* .Header__container{ ... } */
-  .${it.container}{
+  .${Header.container}{
     width: 80%;
     display: block;
     margin: auto;
   }
   /* .Header__title{ ... } */
-  .${it.title}{
+  .${Header.title}{
     font-size: 2rem;
     text-align: center;
   }

@@ -16,7 +16,7 @@ const liveCSS = function(){
     const styleTag = document.createElement('style');
     styleTag.type = 'text/css';
     styleTag.appendChild(document.createTextNode(styles))
-    document.head.appendChild(styleTag)
+    return document.head.appendChild(styleTag)
   }
 }
 const classify = (n) => new Proxy({}, {
@@ -25,7 +25,7 @@ const classify = (n) => new Proxy({}, {
     return n+'__'+prop
   }
 });
-const mangle=(n)=>classify(n+'-'+uid(7))
+const mangle=(n)=>classify(n+'-'+$uid(7))
 
 
 export { css, liveCSS, raw, classify, mangle, uid };
