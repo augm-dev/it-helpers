@@ -3,6 +3,3 @@ node_modules
 *-lock.*
 *.lock
 *.log
-
-/dist
-/meta
