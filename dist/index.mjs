@@ -19,7 +19,7 @@ function plain(t) {
   for (var s = t[0], i = 1, l = arguments.length; i < l; i++)
     s += arguments[i] + t[i];
   return s;
-}const uid$1 = (n=11)=>'_'+uid(n-1);
+}const uid$1 = (n=11)=>'u'+uid(n-1);
 const css=plain.bind(null);
 const raw=plain.bind(null);
 const liveCSS = function(){

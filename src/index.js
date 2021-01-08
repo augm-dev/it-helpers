@@ -7,7 +7,7 @@ function plain(t) {
     s += arguments[i] + t[i];
   return s;
 };
-const uid = (n=11)=>'_'+$uid(n-1)
+const uid = (n=11)=>'u'+$uid(n-1)
 const css=plain.bind(null);
 const raw=plain.bind(null);
 const liveCSS = function(){
